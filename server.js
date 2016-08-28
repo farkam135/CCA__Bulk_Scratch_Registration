@@ -112,7 +112,7 @@ function registerUser(username,schoolInitials, csrf){
               + '&birth_month=1&birth_year=2000'
               + '&gender=student'
               + '&country=United+States'
-              + '&email=questions+' + schoolInitials + '%40thecodecampus.com'
+              + '&email=questions+' + schoolInitials + '%40bitscouts.org'
               + '&is_robot=false&should_generate_admin_ticket=false&usernames_and_messages=%3Ctable+class%3D\'banhistory\'%3E%0A++++%3Cthead%3E%0A++++++++%3Ctr%3E%0A++++++++++++%3Ctd%3EAccount%3C%2Ftd%3E%0A++++++++++++%3Ctd%3EEmail%3C%2Ftd%3E%0A++++++++++++%3Ctd%3EReason%3C%2Ftd%3E%0A++++++++++++%3Ctd%3EDate%3C%2Ftd%3E%0A++++++++%3C%2Ftr%3E%0A++++%3C%2Fthead%3E%0A++++%0A%3C%2Ftable%3E%0A'
               + '&csrfmiddlewaretoken=' + csrf
     }, function (error, response, body) {
