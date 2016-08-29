@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 // Set port
 //   + Development - 3000
 //   + Production  - 80 (default)
-var port = 3000 /*process.env.NODE_ENV === 'development' ? 3000 : 80*/;
+var port = process.env.NODE_ENV === 'development' ? 3000 : 80;
 
 //process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';   //Used to run tests using fiddler, can ignore
 
