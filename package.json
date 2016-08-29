@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=production node server.js",
     "build": "gulp build",
-    "dev": "NODE_ENV=development gulp serve"
+    "dev": "NODE_ENV=development gulp"
   },
   "author": "",
   "license": "ISC",
