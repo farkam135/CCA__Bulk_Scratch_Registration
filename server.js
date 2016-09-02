@@ -66,16 +66,16 @@ function register(usernames, format, schoolInitials){
  */
 function getUsername(name, schoolInitials, format){
     switch(format){
-        case 0:
+        case "0":
             var sName = name.replace(' ','').split(',');
             return sName[0].substring(0,1) + sName[1] + schoolInitials;
-        case 1:
+        case "1":
             var sName = name.replace(' ','').split(',');
             return sName[1].substring(0,1) + sName[0] + schoolInitials;
-        case 2:
+        case "2":
             var sName = name.split(' ');
             return sName[0].substring(0,1) + sName[1] + schoolInitials;
-        case 3:
+        case "3":
             var sName = name.split(' ');
             return sName[1].substring(0,1) + sName[0] + schoolInitials;
 
