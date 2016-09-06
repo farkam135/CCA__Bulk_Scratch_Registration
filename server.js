@@ -1,30 +1,39 @@
 /**
  * Bulk Scratch Registration Server
  */
-var express = require('express')();
+var express = require('express');
+var app = express();
 var request = require('request');
 var bodyParser = require('body-parser');
+
+// Set port
+//   + Development - 3000
+//   + Production  - 80 (default)
+var port = process.env.NODE_ENV === 'development' ? 3000 : 80;
 
 //process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';   //Used to run tests using fiddler, can ignore
 
 //Attaches the body parser to express to get csrf token
-express.use(bodyParser.json());
-express.use(bodyParser.urlencoded({
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
    extended: true
 }));
 
+// Static assets available at `/`
+app.use(express.static('dist'));
+
 //Starts the web server on port 80
-express.listen(80,function(){
-   console.log("Web Server Started...");
+app.listen(port,function(){
+   console.log("Web Server Started On Port: " + port); // Print the current port for debugging
 });
 
 //On index GET send back index.html
-express.get('/',function(req, res){
+app.get('/',function(req, res){
    res.sendFile(__dirname + "/index.html");
 });
 
 //On index POST (submit form on index.html) start the registration process
-express.post('/',function(req, res){
+app.post('/',function(req, res){
     if(req.body.schoolInitials == "" || req.body.names == ""){
        res.send("Please enter names and school initials!");
     }

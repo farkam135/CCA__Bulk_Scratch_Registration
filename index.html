@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Scratch Registration</title>
-</head>
-<body>
-<form action="" method="post">
-    <h2>Bulk Scratch Register</h2>
-    <p>Name Format:</p>
-    <select name="nFormat">
-        <option value="0">First,Last</option>
-        <option value="1">Last,First</option>
-        <option value="2">First Last</option>
-        <option value="3">Last First</option>
-    </select>
-    <p>Student Names (In above format):</p>
-    <textarea name="names" rows="20" cols="20"></textarea>
-    <p>School Initials:</p>
-    <input type="text" name="schoolInitials"/>
+  <head>
+      <meta charset="UTF-8">
+      <title>Scratch Registration</title>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
+    <form class="form" action="" method="post">
+      <h2 class="title">Bulk Scratch Register</h2>
 
-    <br><br>
-    <input type="submit" value="Register">
-</form>
-</body>
+      <div class="form-group">
+        <label for="format" class="format-lbl">Name Format:</label>
+        <select id="format" name="nFormat">
+          <option value="0">First,Last</option>
+          <option value="1">Last,First</option>
+          <option value="2">First Last</option>
+          <option value="3">Last First</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="names" class="names-lbl">Student Names (In above format):</label>
+        <textarea id="names" name="names"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="initials-lbl" for="initials">School Initials:</label>
+        <input id="initials" type="text" name="schoolInitials"/>
+      </div>
+      <button class="submit-btn" type="submit">Register</button>
+    </form>
+  </body>
 </html>
